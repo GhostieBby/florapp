@@ -14,7 +14,6 @@ class Flower(models.Model):
     image = models.ImageField(upload_to="flowers/", blank=True, null=True)
     likes = models.ManyToManyField(
         'users.User',
-        related_name='liked_flower',
         blank=True
     )
 

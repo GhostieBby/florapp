@@ -4,8 +4,8 @@ from django.db import models
 
 class Review(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  # user who commented on the flower
-    flower = models.ForeignKey(Flower, on_delete=models.CASCADE)  # flower that is commented on
+    user = models.ForeignKey('users.User', on_delete=models.CASCADE, null=True)  # user who commented on the flower
+    flower = models.ForeignKey('flowers.Flower', on_delete=models.CASCADE, null=True)  # flower that is commented on
     text = models.TextField()  # text of the user's comment
     date_added = models.DateTimeField(auto_now_add=True)  # date when the comment was added
 
